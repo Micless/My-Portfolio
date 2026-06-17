@@ -1,0 +1,450 @@
+/* Core Presentation Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+}
+
+body {
+    /* Rich Obsidian Black - እጅግ ጥልቅ እና ማራኪ ጥቁር መሰረት */
+    background-color: #05050a; 
+    color: #ffffff;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+/* Stunning Cyber/Programming Background Layer with Subtle Dark Glow */
+.bg-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* የኮዲንግ መስመሮች ምስል */
+    background-image: url('https://images.unsplash.com/photo-1542831371-29b0f74f9713?q=80&w=1920&auto=format&fit=crop');
+    background-size: cover;
+    background-position: center;
+    /* ባግራውንዱ ይበልጥ ወደ ጥቁር እንዲያደላና ጽሁፎቹ እንዲጎሉ ኦፓሲቲውን ወደ 0.08 (8%) ዝቅ አድርጌዋለሁ */
+    opacity: 0.08; 
+    z-index: -2;
+    pointer-events: none;
+}
+
+/* ጥቁሩን ድባብ ሳይረብሽ በጣም ረቂቅና ውብ የሆነ የሐምራዊ እና ሲያን የኔዮን ነጸብራቅ ከጀርባ ይሰጣል */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at 15% 25%, rgba(147, 51, 234, 0.15) 0%, transparent 60%),
+                radial-gradient(circle at 85% 75%, rgba(6, 182, 212, 0.12) 0%, transparent 60%);
+    z-index: -1;
+    pointer-events: none;
+}
+
+/* Smooth Slide Scroll Layout */
+.presentation-container {
+    width: 100vw;
+    height: 100vh;
+    overflow-y: scroll;
+    scroll-snap-type: y mandatory;
+}
+
+.slide-page {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 60px 10%;
+    scroll-snap-align: start;
+    position: relative;
+}
+
+.slide-content {
+    width: 100%;
+    max-width: 1200px;
+}
+
+/* Layout Grids */
+.grid-two-cols {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: center;
+}
+
+.grid-three-cols {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 30px;
+}
+
+/* Premium Jet-Black Glassmorphism Cards */
+.bg-dark-card {
+    /* ይበልጥ ወደ ጥቁር ያዘነበለ ጥልቅ የካርድ ቀለም */
+    background-color: rgba(10, 10, 16, 0.85); 
+    border: 1px solid rgba(147, 51, 234, 0.25); /* Soft Purple Border */
+    padding: 35px;
+    border-radius: 16px;
+    backdrop-filter: blur(20px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.bg-dark-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(6, 182, 212, 0.5); /* Turns Neon Cyan on hover */
+    box-shadow: 0 20px 40px rgba(6, 182, 212, 0.1);
+}
+
+.bg-dark-card h3 {
+    font-size: 22px;
+    color: #ffffff;
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
+.bg-dark-card p {
+    color: #94a3b8; /* Clean and readable contrast */
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+/* Image Placeholders with Dark Charcoal layout */
+.image-placeholder {
+    background-color: rgba(10, 10, 16, 0.5);
+    border: 2px dashed rgba(99, 102, 241, 0.3);
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+    text-align: center;
+    color: #64748b;
+    transition: all 0.3s ease;
+    min-height: 250px;
+}
+
+.image-placeholder i {
+    font-size: 36px;
+    margin-bottom: 12px;
+    color: #4f46e5;
+}
+
+.image-placeholder p {
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    font-weight: 600;
+}
+
+.image-placeholder:hover {
+    border-color: #06b6d4;
+    background-color: rgba(6, 182, 212, 0.03);
+    color: #ffffff;
+}
+
+.main-photo {
+    height: 420px;
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.8);
+}
+
+.portrait-photo {
+    height: 100%;
+}
+
+/* Quick Contact Info Box on First Page */
+.quick-contact-box {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 30px;
+    background: rgba(8, 8, 12, 0.9);
+    padding: 20px;
+    border-radius: 12px;
+    border: 1px solid rgba(6, 182, 212, 0.25); 
+    max-width: 450px;
+}
+
+.quick-contact-box span {
+    font-size: 14px;
+    color: #cbd5e1;
+    display: flex;
+    align-items: center;
+}
+
+.quick-contact-box i {
+    color: #06b6d4; 
+    margin-right: 12px;
+    font-size: 16px;
+}
+
+/* Typography, Badges & Actions */
+.badge {
+    font-size: 11px;
+    letter-spacing: 2px;
+    color: #06b6d4; 
+    font-weight: 700;
+    border: 1px solid rgba(6, 182, 212, 0.3);
+    padding: 6px 16px;
+    display: inline-block;
+    margin-bottom: 25px;
+    border-radius: 20px;
+    background-color: rgba(6, 182, 212, 0.05);
+}
+
+.dev-name {
+    font-size: 64px;
+    font-weight: 900;
+    letter-spacing: -1.5px;
+    background: linear-gradient(to right, #ffffff, #94a3b8);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 5px;
+}
+
+.dev-title {
+    font-size: 24px;
+    background: linear-gradient(135deg, #a855f7 0%, #06b6d4 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 700;
+    letter-spacing: 3px;
+    margin-bottom: 25px;
+}
+
+.dev-desc {
+    color: #64748b;
+    font-size: 16px;
+    margin-bottom: 30px;
+    max-width: 480px;
+    line-height: 1.6;
+}
+
+.section-heading {
+    font-size: 40px;
+    font-weight: 800;
+    letter-spacing: -1px;
+    background: linear-gradient(to right, #ffffff, #94a3b8);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    border-left: 5px solid #06b6d4;
+    padding-left: 20px;
+}
+
+/* Action Buttons with Sleek Cyber Gradient */
+.btn-action {
+    display: inline-block;
+    padding: 14px 32px;
+    background: linear-gradient(135deg, #7c3aed 0%, #0891b2 100%);
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 14px;
+    border-radius: 30px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    transition: all 0.3s ease;
+}
+
+.btn-action:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 25px rgba(124, 58, 237, 0.4);
+}
+
+/* Tech Tags layout */
+.tech-stack-tags {
+    margin-top: 25px;
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.tech-stack-tags span {
+    background-color: rgba(147, 51, 234, 0.05);
+    border: 1px solid rgba(147, 51, 234, 0.2);
+    padding: 8px 16px;
+    font-size: 13px;
+    font-weight: 600;
+    border-radius: 8px;
+    color: #c084fc;
+}
+
+/* Hobby Card Elements */
+.hobby-card {
+    text-align: center;
+}
+
+.hobby-icon {
+    font-size: 32px;
+    margin-bottom: 18px;
+    color: #06b6d4;
+}
+
+.mini-photo {
+    min-height: 110px !important;
+    margin-top: 20px;
+}
+
+/* Project Items Layout */
+.project-bullets li {
+    font-size: 15px;
+    color: #cbd5e1;
+    margin-bottom: 10px;
+}
+
+.project-bullets i {
+    color: #06b6d4;
+    margin-right: 10px;
+}
+
+.project-demo-link {
+    color: #06b6d4;
+    font-size: 15px;
+    font-weight: 700;
+    text-decoration: none;
+    border-bottom: 2px solid rgba(6, 182, 212, 0.3);
+    padding-bottom: 4px;
+    transition: color 0.2s;
+}
+
+.project-demo-link:hover {
+    color: #a855f7;
+    border-color: #a855f7;
+}
+
+.project-images-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+}
+
+/* Workflow Steps Layout */
+.workflow-timeline {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 30px;
+}
+
+.workflow-step {
+    background: rgba(10, 10, 16, 0.7);
+    border: 1px solid rgba(255, 255, 255, 0.03);
+    padding: 35px;
+    border-radius: 16px;
+    backdrop-filter: blur(10px);
+}
+
+.step-num {
+    width: 36px;
+    height: 36px;
+    background: linear-gradient(135deg, #a855f7, #06b6d4);
+    color: #ffffff;
+    font-weight: 800;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 15px;
+    margin-bottom: 20px;
+}
+
+/* Contact List & Social Buttons */
+.contact-list .contact-row {
+    font-size: 17px;
+    color: #e2e8f0;
+    margin-bottom: 5px;
+}
+
+.contact-row i {
+    margin-right: 14px;
+    color: #a855f7;
+}
+
+.social-links-container {
+    display: flex;
+    gap: 15px;
+}
+
+.social-box {
+    background: rgba(147, 51, 234, 0.05);
+    border: 1px solid rgba(147, 51, 234, 0.2);
+    padding: 12px 24px;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: all 0.2s;
+}
+
+.social-box:hover {
+    background: #ffffff;
+    color: #05050a;
+    border-color: #ffffff;
+    transform: translateY(-2px);
+}
+
+/* Page Indicator */
+.page-number {
+    position: absolute;
+    bottom: 90px;
+    right: 10%;
+    font-size: 13px;
+    color: #475569;
+    font-weight: 600;
+}
+
+/* Fixed Footer Slide Control Panels */
+.presentation-footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 22px 5%;
+    background-color: #030305; /* Jet Black Footer */
+    border-top: 1px solid rgba(147, 51, 234, 0.1);
+    font-size: 13px;
+    color: #64748b;
+    z-index: 100;
+}
+
+.slide-navigation a {
+    color: #475569;
+    text-decoration: none;
+    margin: 0 12px;
+    font-weight: 600;
+    transition: color 0.2s;
+}
+
+.slide-navigation a:hover {
+    color: #06b6d4;
+}
+
+/* Responsive UI Adjustment */
+@media (max-width: 900px) {
+    .grid-two-cols, .grid-three-cols, .workflow-timeline {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+    .slide-page {
+        height: auto;
+        padding: 100px 5%;
+        scroll-snap-align: none;
+    }
+    .presentation-container {
+        height: auto;
+        scroll-snap-type: none;
+    }
+    .page-number, .presentation-footer {
+        display: none;
+    }
+}
